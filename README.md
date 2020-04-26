@@ -2,18 +2,14 @@
 Slim game engine.
 
 ### Installation
-1. Download and install Premake **5** from https://premake.github.io/
+1. Clone the repository<br>
+```git clone https://github.com/laurensnol/Slim/```
 
-2. Clone the repository<br>
-```git clone https://github.com/LaurensNol/Slim/```
-
-3. Change directory<br>
+2. Change directory
 ```cd Slim```
 
-4. Build the project<br>
-```thirdparty/premake/premake5.exe vs2019```
-
-5. Open the project
+3. Build the project<br>
+Windows: ```thirdparty/premake/Windows/premake5.exe vs2019```
 
 ### Contribution
 Since the goal of the project is to learn and get a grasp of how game engine development might work, there's currently no code contribution. If you have recommendations in any shape or form I'd be more than thankful if you open an issue with the 'recommendation' tag and give an explanation.
