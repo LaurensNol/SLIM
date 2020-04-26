@@ -2,7 +2,7 @@
 Slim game engine.
 
 ### Installation
-1. Download and install CMake from https://cmake.org/download/
+1. Download and install Premake **5** from https://premake.github.io/
 
 2. Clone the repository<br>
 ```git clone https://github.com/LaurensNol/Slim/```
@@ -10,13 +10,17 @@ Slim game engine.
 3. Change directory<br>
 ```cd Slim```
 
-4. Run CMake<br>
-```cmake -G [GENERATOR]```<br>
-For more info about available generators refer to https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
+4. Build the project<br>
+```thirdparty/premake/premake5.exe vs2019```
 
 5. Open the project
 
-### License
+### Contribution
+Since the goal of the project is to learn and get a grasp of how game engine development might work, there's currently no code contribution. If you have recommendations in any shape or form I'd be more than thankful if you open an issue with the 'recommendation' tag and give an explanation.
 
+### Motivation
+This project is immensely inspired by [The Cherno's Game Engine Series](thecherno.com/engine) on YouTube and [Jason Gregory's 'Game Engine Architecture'](https://www.gameenginebook.com/) book.
+
+### License
 The project is licensed under the Apache 2.0 License.<br>
-For more info refer to: https://choosealicense.com/licenses/apache-2.0/
+https://www.apache.org/licenses/LICENSE-2.0
