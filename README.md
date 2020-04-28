@@ -1,11 +1,13 @@
 # Slim
 Slim game engine.
 
+**Mainly focusing on windows for now. Support for other platforms is not guaranteed.**
+
 ### Installation
 1. Clone the repository<br>
 ```git clone https://github.com/laurensnol/Slim/```
 
-2. Change directory
+2. Change directory<br>
 ```cd Slim```
 
 3. Build the project<br>
