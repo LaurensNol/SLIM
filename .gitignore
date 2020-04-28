@@ -1,0 +1,25 @@
+# C++
+**/bin/
+**/obj/
+**.exe
+
+# Visual Studio
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# Xcode
+xcuserdata/
+
+# Xcode 8
+*.xcscmblueprint
+*.xccheckout
+
+# Gmake
+Makefile
+*.make
+
+# Logging
+**.log
