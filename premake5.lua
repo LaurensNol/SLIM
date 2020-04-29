@@ -29,6 +29,9 @@ project "Slim"
     targetdir "bin/%{prj.name}-%{cfg.buildcfg}-%{cfg.architecture}/"
     objdir "obj/%{prj.name}-%{cfg.buildcfg}-%{cfg.architecture}/"
 
+    pchheader "slimpch.h"
+    pchsource "%{prj.name}/slimpch.cpp"
+
     files
     {
         "%{prj.name}/**.h",
