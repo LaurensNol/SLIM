@@ -49,7 +49,7 @@ project "Slim"
 
     includedirs
     {
-        "%{prj.name}/"
+        "%{prj.name}/",
         "%{libraries.glad}/include",
         "%{libraries.glfw}/include",
         "%{libraries.glm}",
