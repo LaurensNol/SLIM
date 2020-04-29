@@ -14,9 +14,9 @@ libraries["spdlog"]    = "thirdparty/spdlog"
 libraries["stb_image"] = "thirdparty/stb_image"
 
 group "Dependencies"
-    include "%{libraries.glad}"
-    include "%{libraries.glfw}"
-    include "%{libraries.imgui}"
+    include "/thirdparty/glad/"
+    include "/thirdparty/glfw/"
+    include "/thirdparty/imgui/"
 
  -- Slim
 project "Slim"
