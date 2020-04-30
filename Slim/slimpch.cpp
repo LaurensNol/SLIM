@@ -1,5 +1,5 @@
 /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
- *  slimpch.h
+ *  slimpch.cpp
  *  29.04.2020
  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
  *  Part of 'Slim Engine'
