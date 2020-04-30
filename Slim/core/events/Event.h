@@ -23,12 +23,10 @@
 #ifndef SLIM_EVENT_H
 #define SLIM_EVENT_H
 
-#include "../../slimpch.h"
+#include "slimpch.h"
 
 namespace slim
 {
-    typedef std::function<void(std::unique_ptr<Event>)> EventCallbackFun;
-
     enum EVENT_TYPE
     {
         // Window Events
@@ -48,7 +46,7 @@ namespace slim
     {
     public:
         Event(EVENT_TYPE type, std::any message)
-            : m_type(type), m_message(message)
+            : m_type(type), m_message(message) {}
 
         virtual ~Event() = default;
 
@@ -67,6 +65,9 @@ namespace slim
         std::any m_message;
         EVENT_TYPE m_type;
     };
+
+    // Event Callback Function
+    typedef std::function<void(Event&)> EventCallbackFun;
 }
 
 #endif
