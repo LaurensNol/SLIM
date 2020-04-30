@@ -30,7 +30,7 @@ project "Slim"
     objdir "obj/%{prj.name}-%{cfg.buildcfg}-%{cfg.architecture}/"
 
     pchheader "slimpch.h"
-    pchsource "%{prj.name}/slimpch.cpp"
+    pchsource "Slim/slimpch.cpp"
 
     files
     {
