@@ -31,26 +31,46 @@
 
 namespace slim
 {
+    enum class CursorMode
+    {
+        Normal,
+        Hidden,
+        Disabled
+    };
+
+    struct WindowConfig
+    {
+        std::string title;
+        unsigned int width;
+        unsigned int height;
+
+        WindowConfig(const std::string& title = "Slim Engine", unsigned int width = 1024, unsigned int height = 720)
+            : title(title), width(width), height(height) { }
+    };
+
     class Window
     {
     public:
         virtual ~Window() = default;
 
-        virtual unsigned int getWidth() const = 0;
-        virtual unsigned int getHeight() const = 0;
-        virtual unsigned int getTitle() const = 0;
+        virtual void* getNativeWindow() const = 0;
 
-        virtual void onUpdate() = 0;
-        virtual void onEvent() = 0;
+        virtual const std::string& getTitle() = 0;
+        virtual unsigned int getWidth() = 0;
+        virtual unsigned int getHeight() = 0;
+        virtual bool getVsync() = 0;
 
+        virtual void setTitle(const std::string& title) = 0;
+        virtual void setWidth(unsigned int width) = 0;
+        virtual void setHeight(unsigned int width) = 0;
+        virtual void setVsync(bool vsync) = 0;
+
+        virtual void update() = 0;
         virtual void terminate() = 0;
 
-        virtual void setVsync(bool value) = 0;
-        virtual bool isVsync() const = 0;
+        virtual void setEventCallback(const EventCallbackFun& callback) = 0;
 
-        virtual void setEventCallbackFun(const EventCallbackFun& callback) = 0;
-    private:
-        EventCallbackFun m_eventCallbackFun;
+        static std::unique_ptr<Window> Create(const WindowConfig& config = WindowConfig());
     };
 }
 
