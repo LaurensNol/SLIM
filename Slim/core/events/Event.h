@@ -26,7 +26,7 @@
 #include "slimpch.h"
 
 namespace slim
-{   
+{
     enum EventType
     {
         // Window Events
