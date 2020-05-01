@@ -40,6 +40,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "utils/Log.h"
+
 #ifdef _SLIM_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
