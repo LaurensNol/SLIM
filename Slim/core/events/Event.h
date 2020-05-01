@@ -26,32 +26,32 @@
 #include "slimpch.h"
 
 namespace slim
-{
-    enum EVENT_TYPE
+{   
+    enum EventType
     {
         // Window Events
-        WINDOW_MOVE, WINDOW_CLOSE, WINDOW_RESIZE, WINDOW_FOCUS,
+        WindowMove, WindowClose, WindowResize, WindowFocus,
 
         // Mouse Events
-        MOUSE_MOVE, MOUSE_SCROLL, MOUSE_KEY_PRESS, MOUSE_KEY_RELEASE, MOUSE_KEY_HOLD,
+        MouseMove, MouseScroll, MouseKeyPress, MouseKeyRelease, MouseKeyHold,
 
         // Key Events
-        KEY_PRESS, KEY_RELEASE, KEY_HOLD,
+        KeyPress, KeyRelease, KeyHold,
 
         // Controller Events (preliminary)
-        CONTROLLER_KEY_PRESS, CONTROLLER_KEY_RELEASE, CONTROLLER_KEY_HOLD
+        ControllerKeyPress, ControllerKeyRelease, ControllerKeyHold
     };
 
     class Event
     {
     public:
-        Event(EVENT_TYPE type, std::any message)
+        Event(EventType type, std::any message)
             : m_type(type), m_message(message) {}
 
         virtual ~Event() = default;
 
         virtual std::any getMessage() = 0;
-        virtual EVENT_TYPE getType() = 0;
+        virtual EventType getType() = 0;
 
         virtual const std::string toString()
         {
@@ -63,7 +63,7 @@ namespace slim
 
     private:
         std::any m_message;
-        EVENT_TYPE m_type;
+        EventType m_type;
     };
 
     // Event Callback Function
