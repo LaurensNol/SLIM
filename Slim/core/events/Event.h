@@ -27,16 +27,18 @@
 
 namespace slim
 {
-    enum EventType
+    enum class EventType
     {
+        None = 0,
+
         // Window Events
-        WindowMove, WindowClose, WindowResize, WindowFocus,
+        WindowClose, WindowResize, WindowFocus,
 
         // Mouse Events
-        MouseMove, MouseScroll, MouseKeyPress, MouseKeyRelease, MouseKeyHold,
+        MouseMove, MouseScroll, MouseButtonPress, MouseButtonRelease, MouseButtonHold,
 
         // Key Events
-        KeyPress, KeyRelease, KeyHold,
+        KeyPress, KeyRelease, KeyHold, KeyType,
 
         // Controller Events (preliminary)
         ControllerKeyPress, ControllerKeyRelease, ControllerKeyHold
@@ -45,13 +47,23 @@ namespace slim
     class Event
     {
     public:
+        virtual ~Event() = default;
+
+        virtual EventType getType() const = 0;
+
+        virtual const std::string& toString() = 0;
+    };
+
+    /*class Event
+    {
+    public:
         Event(EventType type, std::any message)
-            : m_type(type), m_message(message) {}
+            : m_type(type), m_message(message) { }
 
         virtual ~Event() = default;
 
-        virtual std::any getMessage() = 0;
-        virtual EventType getType() = 0;
+        inline std::any getMessage() const { return m_message; }
+        inline EventType getType() const { return m_type; }
 
         virtual const std::string toString()
         {
@@ -64,7 +76,7 @@ namespace slim
     private:
         std::any m_message;
         EventType m_type;
-    };
+    };*/
 
     // Event Callback Function
     typedef std::function<void(Event&)> EventCallbackFun;
