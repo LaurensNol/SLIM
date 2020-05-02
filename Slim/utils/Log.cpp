@@ -20,6 +20,8 @@
  *  limitations under the License.
  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
 
+#include "slimpch.h"
+
 #include "Log.h"
 
 namespace slim
