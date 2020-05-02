@@ -25,7 +25,7 @@
 #include "Window.h"
 #include "../platform/windows/WindowsWindow.h"
 
-std::unique_ptr<slim::Window> slim::Window::Create(const WindowConfig& config = WindowConfig())
+std::unique_ptr<slim::Window> slim::Window::Create(const WindowConfig& config/* = WindowConfig()*/)
 {
     #ifdef _SLIM_PLATFORM_WINDOWS
         return std::make_unique<slim::WindowsWindow>(config);
